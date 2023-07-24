@@ -25,7 +25,7 @@ defineProps({
   display: flex;
   flex-direction: column;
   gap: 1vw;
-  width: 200px;
+  width: 10.5vw;
   height: 350px;
   overflow: hidden;
 }

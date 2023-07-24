@@ -7,48 +7,49 @@ import Card from "./Card.vue";
     <div class="top-content">
       <Card
         projectNumber="P.001"
-        title="Hello"
-        image="/src/assets/little-project.png"
-        dataImg="Test d'un image"
+        title="Flow texture"
+        image="/src/assets/flow.jpg"
+        dataImg="Flow texture polygon"
       />
       <Card
-        projectNumber="P.001"
-        title="Hello"
-        image="/src/assets/little-project.png"
-        dataImg="Test d'un image"
+        projectNumber="P.002"
+        title="Crystal texture"
+        image="/src/assets/crystal.jpg"
+        dataImg="Crystal texture"
       />
       <Card
-        projectNumber="P.001"
-        title="Hello"
-        image="/src/assets/little-project.png"
-        dataImg="Test d'un image"
+        projectNumber="P.003"
+        title="Minimalist interior"
+        image="/src/assets/interior.jpg"
+        dataImg="Minimalist interior"
       />
       <Card
-        projectNumber="P.001"
-        title="Hello"
-        image="/src/assets/little-project.png"
-        dataImg="Test d'un image"
+        projectNumber="P.004"
+        title="Unknow resource"
+        image="/src/assets/unknow.jpg"
+        dataImg="Unknow resource"
       />
     </div>
 
     <div class="bottom-content">
       <Card
-        projectNumber="P.001"
-        title="Hello"
-        image="/src/assets/little-project.png"
-        dataImg="Test d'un image"
+        projectNumber="P.007"
+        title="The new hand"
+        image="/src/assets/hand.jpg"
+        dataImg="Hand texture"
+      />
+
+      <Card
+        projectNumber="P.006"
+        title="IA Revolution"
+        image="/src/assets/robot.jpg"
+        dataImg="image robot"
       />
       <Card
-        projectNumber="P.001"
-        title="Hello"
-        image="/src/assets/little-project.png"
-        dataImg="Test d'un image"
-      />
-      <Card
-        projectNumber="P.001"
-        title="Hello"
-        image="/src/assets/little-project.png"
-        dataImg="Test d'un image"
+        projectNumber="P.005"
+        title="Bubble texture"
+        image="/src/assets/bubble.jpg"
+        dataImg="Bubble texture"
       />
     </div>
 
@@ -65,6 +66,7 @@ import Card from "./Card.vue";
   flex-direction: column;
   gap: 8vw;
   padding: 1vw;
+  margin-top: 5vw;
 }
 .top-content {
   display: flex;
@@ -90,8 +92,9 @@ import Card from "./Card.vue";
 
 .number-content {
   position: absolute;
-  bottom: 10vh;
+  bottom: 1vh;
   right: 20vw;
-  font-size: 50px;
+  font-size: 4vw;
+  font-weight: 600;
 }
 </style>

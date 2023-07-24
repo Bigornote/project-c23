@@ -26,13 +26,16 @@ defineProps({
   flex-direction: column;
   gap: 1vw;
   width: 10.5vw;
-  height: 350px;
   overflow: hidden;
 }
 
 .number,
 .title {
   margin: 0;
+}
+
+.number {
+  font-weight: 600;
 }
 
 .img {

@@ -13,7 +13,5 @@ import Galery from "./components/Galery.vue";
 <style scoped>
 main {
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
 }
 </style>

@@ -2,12 +2,12 @@
 
 <template>
   <section class="navbar">
-    <div class="top-nav">
-      <p class="name">Filip Slovacek</p>
-      <p class="icon-triangle">triangle</p>
-      <p class="work">Selected Works</p>
+    <div class="nav">
+      <p class="title">Filip Sl0vacek</p>
+      <img class="icon-triangle" src="../assets/triangle.svg" />
+      <p class="work">Selected W0rks</p>
     </div>
-    <div class="bottom-nav">
+    <div class="info">
       <p>S.D<br />Slovadek.design</p>
       <p>Design<br />& Art direction</p>
       <p>All Rights Reserved<br />C.23</p>
@@ -16,17 +16,31 @@
   </section>
 </template>
 
-<style lang="css">
+<style scoped lang="css">
 .navbar {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 1vw;
+  gap: 1.5vw;
 }
-.top-nav {
+.nav {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  text-align: center;
 }
-.bottom-nav {
+.title,
+.work {
+  width: 45%;
+  font-size: 5vw;
+}
+.icon-triangle {
+  position: relative;
+  top: -1vw;
+  width: 20px;
+  align-self: flex-end;
+}
+.info {
   display: flex;
   justify-content: space-between;
 }

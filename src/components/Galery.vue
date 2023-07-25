@@ -4,36 +4,47 @@ import { onMounted } from "vue";
 import Card from "./Card.vue";
 
 onMounted(() => {
-  const images = document.querySelectorAll(".card img");
   const content = document.querySelectorAll(".card .content");
+  const blocImages = document.querySelectorAll(".card .img");
+
   content.forEach((element, index) => {
-    if (index % 2 === 0) {
-      gsap.fromTo(
-        element,
-        { opacity: 0 },
-        { opacity: 1, duration: 1, delay: 2 + (index / 2) * 0.15 }
-      );
-    } else {
-      gsap.fromTo(
-        element,
-        { opacity: 0 },
-        { opacity: 1, duration: 1, delay: 2.8 + ((index - 1) / 2) * 0.15 }
-      );
-    }
+    gsap.fromTo(
+      element,
+      { opacity: 0, skewY: 7 },
+      {
+        opacity: 1,
+        duration: 1,
+        skewY: 0,
+        ease: "power4.out",
+        delay: 1.8 + (index / 2) * 0.05,
+      }
+    );
   });
 
-  images.forEach((element, index) => {
+  blocImages.forEach((element, index) => {
     if (index % 2 === 0) {
       gsap.fromTo(
         element,
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 1, delay: 2 + (index / 2) * 0.15 }
+        { opacity: 0, y: -50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.5,
+          ease: "power4.inOut",
+          delay: 0.8 + (index / 2) * 0.05,
+        }
       );
     } else {
       gsap.fromTo(
         element,
         { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 1, delay: 2.8 + ((index - 1) / 2) * 0.15 }
+        {
+          opacity: 1,
+          y: 0,
+          duration: 2,
+          ease: "power4.inOut",
+          delay: 0.8 + ((index - 1) / 2) * 0.05,
+        }
       );
     }
   });

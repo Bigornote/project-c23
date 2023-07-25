@@ -11,14 +11,8 @@ onMounted(() => {
   );
   gsap.fromTo(
     ".icon-triangle",
-    { opacity: 0, y: -20 },
-    { opacity: 1, y: 0, duration: 1, delay: 0.5 }
-  );
-
-  gsap.fromTo(
-    ".info",
-    { opacity: 0, y: 20 },
-    { opacity: 1, y: 0, duration: 1, delay: 1 }
+    { opacity: 0, y: -20, rotate: -20 },
+    { opacity: 1, y: 0, rotate: 0, duration: 1, delay: 0.5 }
   );
 });
 </script>
@@ -26,15 +20,15 @@ onMounted(() => {
 <template>
   <section class="navbar">
     <div class="nav">
-      <p class="title">Filip Sl0vacek</p>
+      <p class="title">Gsap Training</p>
       <img class="icon-triangle" src="../assets/triangle.svg" />
       <p class="work">Selected W0rks</p>
     </div>
     <div class="info">
-      <p>S.D<br />Slovadek.design</p>
+      <p>G.D<br />Greensock.design</p>
       <p>Design<br />& Art direction</p>
       <p>All Rights Reserved<br />C.23</p>
-      <p>Prague, CZ</p>
+      <p>France, Fr</p>
     </div>
   </section>
 </template>

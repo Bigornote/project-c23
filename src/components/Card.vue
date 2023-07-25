@@ -40,6 +40,7 @@ defineProps({
 
 .img {
   object-fit: cover;
+  overflow: hidden;
 }
 
 .img img {

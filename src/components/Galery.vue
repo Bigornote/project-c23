@@ -3,12 +3,41 @@ import { gsap } from "gsap";
 import { onMounted } from "vue";
 import Card from "./Card.vue";
 
-// onMounted(() => {
-//   gsap.to(".card", {
-//     duration: 1.5,
-//     y: 100,
-//   });
-// });
+onMounted(() => {
+  const images = document.querySelectorAll(".card img");
+  const content = document.querySelectorAll(".card .content");
+  content.forEach((element, index) => {
+    if (index % 2 === 0) {
+      gsap.fromTo(
+        element,
+        { opacity: 0 },
+        { opacity: 1, duration: 1, delay: 2 + (index / 2) * 0.15 }
+      );
+    } else {
+      gsap.fromTo(
+        element,
+        { opacity: 0 },
+        { opacity: 1, duration: 1, delay: 2.8 + ((index - 1) / 2) * 0.15 }
+      );
+    }
+  });
+
+  images.forEach((element, index) => {
+    if (index % 2 === 0) {
+      gsap.fromTo(
+        element,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1, delay: 2 + (index / 2) * 0.15 }
+      );
+    } else {
+      gsap.fromTo(
+        element,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1, delay: 2.8 + ((index - 1) / 2) * 0.15 }
+      );
+    }
+  });
+});
 </script>
 
 <template>

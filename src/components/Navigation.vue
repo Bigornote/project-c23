@@ -1,4 +1,17 @@
-<script setup lang="ts"></script>
+<script scoped setup>
+import { gsap } from "gsap";
+import { onMounted } from "vue";
+
+const nav = [".navbar .title", ".navbar .work"];
+onMounted(() => {
+  gsap.fromTo(nav, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 });
+  gsap.fromTo(
+    ".icon-triangle",
+    { opacity: 0, y: -50 },
+    { opacity: 1, y: 0, duration: 1 }
+  );
+});
+</script>
 
 <template>
   <section class="navbar">

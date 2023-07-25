@@ -1,39 +1,32 @@
 <script setup>
 import { gsap } from "gsap";
+import { onMounted } from "vue";
 import Card from "./Card.vue";
-import { onMounted, ref } from "vue";
 
-// Function fade
-const fade = (elementRef, delay) => {
-  if (!elementRef) return;
-
-  gsap.fromTo(elementRef, fromProps, {
-    ...toProps,
-    duration: 0.3,
-    delay: delay,
-  });
-};
+// onMounted(() => {
+//   gsap.to(".card", {
+//     duration: 1.5,
+//     y: 100,
+//   });
+// });
 </script>
 
 <template>
   <section class="galery">
     <div class="top-content">
       <Card
-        ref="card1"
         projectNumber="P.001"
         title="Flow texture"
         image="/src/assets/flow.jpg"
         dataImg="Flow texture polygon"
       />
       <Card
-        ref="card2"
         projectNumber="P.002"
         title="Crystal texture"
         image="/src/assets/crystal.jpg"
         dataImg="Crystal texture"
       />
       <Card
-        ref="card3"
         projectNumber="P.003"
         title="Minimalist interior"
         image="/src/assets/interior.jpg"

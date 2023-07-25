@@ -7,8 +7,14 @@ onMounted(() => {
   gsap.fromTo(nav, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 });
   gsap.fromTo(
     ".icon-triangle",
-    { opacity: 0, y: -50 },
+    { opacity: 0, y: -20 },
     { opacity: 1, y: 0, duration: 1 }
+  );
+
+  gsap.fromTo(
+    ".info",
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, duration: 1, delay: 0.5 }
   );
 });
 </script>

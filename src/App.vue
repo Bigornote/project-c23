@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import Navigation from "./components/Navigation.vue";
 import Galery from "./components/Galery.vue";
 </script>

@@ -1,5 +1,6 @@
 <script setup>
 const { title, projectNumber, dataImg, image } = defineProps({
+  id: Number,
   projectNumber: String,
   title: String,
   dataImg: String,
@@ -11,7 +12,7 @@ const openModal = () => {};
 
 <template>
   <div class="card" @click="openModal">
-    <div class="content">
+    <div class="content" :id="id">
       <p class="number">{{ projectNumber }}</p>
       <p class="title">{{ title }}</p>
     </div>

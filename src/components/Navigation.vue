@@ -2,8 +2,8 @@
 import { gsap } from "gsap";
 import { onMounted } from "vue";
 
-const nav = [".navbar .title div span", ".navbar .work div span"];
-onMounted(() => {
+const animateNav = () => {
+  const nav = [".navbar .title div span", ".navbar .work div span"];
   gsap.from(nav, {
     y: "100%",
     skewY: 7,
@@ -20,7 +20,8 @@ onMounted(() => {
     { opacity: 0, y: -20, rotate: -20 },
     { opacity: 1, y: 0, rotate: 0, duration: 1, delay: 0.5 }
   );
-});
+};
+onMounted(animateNav);
 </script>
 
 <template>

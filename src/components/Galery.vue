@@ -3,8 +3,9 @@ import { gsap } from "gsap";
 import { onMounted } from "vue";
 import Card from "./Card.vue";
 import Modal from "./Modal.vue";
+import { content } from "../data/data.json";
 
-onMounted(() => {
+const animateElements = () => {
   const content = document.querySelectorAll(".card .content");
   const blocImages = document.querySelectorAll(".card .img");
 
@@ -49,57 +50,34 @@ onMounted(() => {
       );
     }
   });
-});
+};
+
+onMounted(animateElements);
 </script>
 
 <template>
   <section class="galery">
     <div class="top-content">
       <Card
-        projectNumber="P.001"
-        title="Flow texture"
-        image="/src/assets/flow.jpg"
-        dataImg="Flow texture polygon"
-      />
-      <Card
-        projectNumber="P.002"
-        title="Crystal texture"
-        image="/src/assets/crystal.jpg"
-        dataImg="Crystal texture"
-      />
-      <Card
-        projectNumber="P.003"
-        title="Minimalist interior"
-        image="/src/assets/interior.jpg"
-        dataImg="Minimalist interior"
-      />
-      <Card
-        projectNumber="P.004"
-        title="Unknow resource"
-        image="/src/assets/unknow.jpg"
-        dataImg="Unknow resource"
+        v-for="(item, index) in content.slice(0, 4)"
+        :key="index"
+        :id="item.id"
+        :projectNumber="item.projectNumber"
+        :title="item.title"
+        :image="item.image"
+        :dataImg="item.dataImg"
       />
     </div>
 
     <div class="bottom-content">
       <Card
-        projectNumber="P.007"
-        title="The new hand"
-        image="/src/assets/hand.jpg"
-        dataImg="Hand texture"
-      />
-
-      <Card
-        projectNumber="P.006"
-        title="IA Revolution"
-        image="/src/assets/robot.jpg"
-        dataImg="image robot"
-      />
-      <Card
-        projectNumber="P.005"
-        title="Bubble texture"
-        image="/src/assets/bubble.jpg"
-        dataImg="Bubble texture"
+        v-for="(item, index) in content.slice(4, 7)"
+        :key="index"
+        :id="item.id"
+        :projectNumber="item.projectNumber"
+        :title="item.title"
+        :image="item.image"
+        :dataImg="item.dataImg"
       />
     </div>
 

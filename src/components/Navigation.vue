@@ -1,14 +1,19 @@
-<script scoped setup>
+<script setup>
 import { gsap } from "gsap";
 import { onMounted } from "vue";
 
-const nav = [".navbar .title", ".navbar .work"];
+const nav = [".navbar .title div span", ".navbar .work div span"];
 onMounted(() => {
-  gsap.fromTo(
-    nav,
-    { opacity: 0, y: 50 },
-    { opacity: 1, y: 0, duration: 1, delay: 0.5 }
-  );
+  gsap.from(nav, 1.2, {
+    y: "100%",
+    ease: "power4.out",
+    delay: 0.5,
+    skewY: 7,
+    stagger: {
+      amount: 0.233,
+    },
+  });
+
   gsap.fromTo(
     ".icon-triangle",
     { opacity: 0, y: -20, rotate: -20 },
@@ -20,9 +25,15 @@ onMounted(() => {
 <template>
   <section class="navbar">
     <div class="nav">
-      <p class="title">Gsap Training</p>
+      <div class="title">
+        <div><span>Gsap</span></div>
+        <div><span>Training</span></div>
+      </div>
       <img class="icon-triangle" src="../assets/triangle.svg" />
-      <p class="work">Selected W0rks</p>
+      <div class="work">
+        <div><span>Selected</span></div>
+        <div><span>W0rks</span></div>
+      </div>
     </div>
     <div class="info">
       <p>G.D<br />Greensock.design</p>
@@ -49,7 +60,23 @@ onMounted(() => {
 .title,
 .work {
   width: 45%;
+}
+
+.title div,
+.work div {
+  width: 100%;
+  height: 5.1vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.title div span,
+.work div span {
+  position: absolute;
+  top: 0;
+  left: 50%;
   font-size: 5vw;
+  transform: translateX(-50%);
 }
 .icon-triangle {
   position: relative;

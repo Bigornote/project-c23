@@ -1,14 +1,16 @@
 <script setup>
-defineProps({
-  title: String,
+const { title, projectNumber, dataImg, image } = defineProps({
   projectNumber: String,
+  title: String,
   dataImg: String,
   image: String,
 });
+
+const openModal = () => {};
 </script>
 
 <template>
-  <div class="card">
+  <div class="card" @click="openModal">
     <div class="content">
       <p class="number">{{ projectNumber }}</p>
       <p class="title">{{ title }}</p>
@@ -27,6 +29,7 @@ defineProps({
   gap: 1vw;
   width: 10.5vw;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .number,

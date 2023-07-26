@@ -2,6 +2,7 @@
 import { gsap } from "gsap";
 import { onMounted } from "vue";
 import Card from "./Card.vue";
+import Modal from "./Modal.vue";
 
 onMounted(() => {
   const content = document.querySelectorAll(".card .content");
@@ -16,7 +17,7 @@ onMounted(() => {
         duration: 1,
         skewY: 0,
         ease: "power4.out",
-        delay: 1.8 + (index / 2) * 0.05,
+        delay: 1.8 + (index / 2) * 0.2,
       }
     );
   });
@@ -25,25 +26,25 @@ onMounted(() => {
     if (index % 2 === 0) {
       gsap.fromTo(
         element,
-        { opacity: 0, y: -50 },
+        { opacity: 0, y: -100 },
         {
           opacity: 1,
           y: 0,
           duration: 1.5,
           ease: "power4.inOut",
-          delay: 0.8 + (index / 2) * 0.05,
+          delay: 0.8 + (index / 2) * 0.2,
         }
       );
     } else {
       gsap.fromTo(
         element,
-        { opacity: 0, y: 50 },
+        { opacity: 0, y: 100 },
         {
           opacity: 1,
           y: 0,
           duration: 2,
           ease: "power4.inOut",
-          delay: 0.8 + ((index - 1) / 2) * 0.05,
+          delay: 0.8 + ((index - 1) / 2) * 0.5,
         }
       );
     }
@@ -106,6 +107,12 @@ onMounted(() => {
       <p>C.23</p>
     </div>
   </section>
+  <Modal
+    projectNumber="P.001"
+    title="Flow texture"
+    image="/src/assets/flow.jpg"
+    dataImg="Flow texture polygon"
+  />
 </template>
 
 <style lang="css">

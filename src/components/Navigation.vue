@@ -4,11 +4,12 @@ import { onMounted } from "vue";
 
 const nav = [".navbar .title div span", ".navbar .work div span"];
 onMounted(() => {
-  gsap.from(nav, 1.2, {
+  gsap.from(nav, {
     y: "100%",
+    skewY: 7,
     ease: "power4.out",
     delay: 0.5,
-    skewY: 7,
+    duration: 1.5,
     stagger: {
       amount: 0.233,
     },
